@@ -4,20 +4,22 @@
 #SBATCH --error %x-%j.err
 #SBATCH --output %x-%j.out
 
-#SBATCH --partition=cpu
+#SBATCH --partition=mem
 #SBATCH --mem=230G
-#SBATCH --cpus-per-task=96
+#SBATCH --cpus-per-task=64
 
 module load hifiasm/0.19.8
 
-# TBG_2523_3
-IN1=/cluster/home/lchueca/TBG_2523_3/m64167e_220127_013751.hifi.fq
-# TBG_2523_6
-IN2=/cluster/home/lchueca/TBG_2523_6/m64346e_220323_230227.deepconsensus.lima.pbmarkdup.fastq
-# TBG_2523_7
-IN3=/cluster/home/lchueca/TBG_2523_7/hifi_reads/m64167e_220617_hifi.lima.pbmarkdup.fastq
-PREF=Argo.asm
-CPU=96
+#IN1,2,3 I specified the paths of the variables
+
+# TBG_3759
+IN1=/cluster/home/lchueca/TBG_3759/01.hifi_deepconsensus/m64037e_230114_104235.deepconsensus.lima.pbmarkdup.fastq
+# TBG_3759_4
+IN2=/cluster/home/lchueca/TBG_3759_4/deepconsensus/m64347e_230513_102840.deepconsensus.combined.lima.pbmarkdup.fastq
+# TBG_3759_6
+IN3=/cluster/home/lchueca/TBG_3759_6/m84051_230814_140752_s1.hifi_reads.default.fastq
+PREF=anchovy.asm
+CPU=64
 
 hifiasm -o ${PREF} -t ${CPU} ${IN1} ${IN2} ${IN3} &&
 
