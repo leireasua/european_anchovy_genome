@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=01.1_busco
+#SBATCH --job-name=01.1_busco5.5
 #SBATCH --error %x-%j.err
 #SBATCH --output %x-%j.out
 
