@@ -15,7 +15,7 @@ IN1=/cluster/home/lchueca/TBG_3759_anchovy/01.1_hifiasm/anchovy.asm.bp.p_ctg.fa
 # Lineage
 LIN=/cluster/software/busco/datasets/odb10_2021_09_02/actinopterygii_odb10
 # Output directory
-OUT=/cluster/home/lchueca/TBG_3759_anchovy/01.1_hifiasm/busco5.5_odb10
+OUT=busco5.5_odb10_results
 #CPU per task
 CPU=8
 
