@@ -4,8 +4,8 @@
 #SBATCH --error %x-%j.err
 #SBATCH --output %x-%j.out
 
-#SBATCH --partition=mem
-#SBATCH --mem=550G
+#SBATCH --partition=cpu
+#SBATCH --mem=990G
 #SBATCH --cpus-per-task=64
 
 module load canu/2.2
