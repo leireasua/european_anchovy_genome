@@ -21,4 +21,4 @@ IN3=/cluster/home/lchueca/TBG_3759_6/m84051_230814_140752_s1.hifi_reads.default.
 PREF=anchovy.asm
 CPU=64
 
-wtdbg2 -x ccs -g 1.54g -t ${CPU} -i ${IN1} ${IN2} ${IN3} -o ${PREF}
+wtdbg2 -x ccs -g '1.54g' -t ${CPU} -i ${IN1} ${IN2} ${IN3} -o ${PREF}
