@@ -20,8 +20,11 @@ IN2=/cluster/home/lchueca/TBG_3759_4/deepconsensus/m64347e_230513_102840.deepcon
 IN3=/cluster/home/lchueca/TBG_3759_6/m84051_230814_140752_s1.hifi_reads.default.fastq
 # Output directory
 OUT=/cluster/home/lchueca/TBG_3759_anchovy/01.5_wtdbg2
-
-wtdbg2-racon-pilon.pl -l ${IN1} ${IN2} ${IN3} -x ccs -o ${OUT} -wtdbg-opts -g 1,54g
+CPU=64
 
 #In this script a wrapper created by shcellt has been used: https://github.com/schellt/wtdbg2-racon-pilon
 #Moreover, in this script, wtdbg2 and 3 rounds of polishing with racon are used, polishing with pilon is also used
+
+wtdbg2-racon-pilon.pl -l ${IN1} ${IN2} ${IN3} -x ccs -o ${OUT} -t ${CPU} -wtdbg-opts -g '1.54g' 
+
+
