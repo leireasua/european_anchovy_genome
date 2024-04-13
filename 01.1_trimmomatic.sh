@@ -5,21 +5,29 @@
 #SBATCH --output %x-%j.out
 
 #SBATCH --partition=cpu
-#SBATCH --mem=550G
-#SBATCH --cpus-per-task=64
+#SBATCH --mem=23G
+#SBATCH --cpus-per-task=28
 
 module load trimmomatic/0.39
 
-#CPU per task
-CPU=64
+# Raw data input directory
+IN=/cluster/home/lchueca/TBG_3759_5/X204SC23051431-Z01-F001/01.RawData/Anchovis_Mix_7
+R1=Anchovis_Mix_7_EKRN23H000053-1A_HFC7MDSX7_L3
+R2=Anchovis_Mix_7_EKRN23H000053-1A_HFCCLDSX7_L4
+CPU=28
 
-PE -threads ${CPU} [-phred33|-phred64] -trimlog anchovy_rna.trimLog \
-> -basein <inputBase> | <inputFile1> <inputFile2> -baseout <anchovy_rna.fq> | <outputFile1P> <outputFile1U> <outputFile2P> <outputFile2U>] \
-> ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 \
-> LEADING:3 TRAILING:3 \
-> SLIDINGWINDOW:4:15 \
-> MINLEN:36 
+# Creat a soft link to the raw data
+for i in $(find ${IN} -name "*fq.gz"); do echo "ln -s ${i}"; done
 
-#phred 33 or 64? depends on the illumina pipeline used (they are quality scores)
-#input and output files names no entiendo muy bien
-#me faltan los datos de illumina RNA
+java -jar /cluster/software/Trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads ${CPU} \
+ ${R1}_1.fq.gz ${R1}_2.fq.gz \
+ ${R1}_1_paired.fq.gz ${R1}_1_unpaired.fq.gz \
+ ${R1}_2_paired.fq.gz ${R1}_2_unpaired.fq.gz \
+ ILLUMINACLIP:/cluster/software/Trimmomatic/Trimmomatic-0.39/adapters/adapter_all.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:50 &&
+
+java -jar /cluster/software/Trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads ${CPU} \
+ ${R2}_1.fq.gz ${R2}_2.fq.gz \
+ ${R2}_1_paired.fq.gz ${R2}_1_unpaired.fq.gz \
+ ${R2}_2_paired.fq.gz ${R2}_2_unpaired.fq.gz \
+ ILLUMINACLIP:/cluster/software/Trimmomatic/Trimmomatic-0.39/adapters/adapter_all.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:50
+ 
