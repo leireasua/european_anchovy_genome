@@ -4,7 +4,7 @@
 #SBATCH --error %x-%j.err
 #SBATCH --output %x-%j.out
 
-#SBATCH --partition=cpu
+#SBATCH --partition=mem
 #SBATCH --mem=23G
 #SBATCH --cpus-per-task=28
 
@@ -17,7 +17,7 @@ R2=Anchovis_Mix_7_EKRN23H000053-1A_HFCCLDSX7_L4
 CPU=28
 
 # Creat a soft link to the raw data
-for i in $(find ${IN} -name "*fq.gz"); do echo "ln -s ${i}"; done
+for i in $(find ${IN} -name "*fq.gz"); do ln -s ${i}; done
 
 java -jar /cluster/software/Trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads ${CPU} \
  ${R1}_1.fq.gz ${R1}_2.fq.gz \
