@@ -17,7 +17,7 @@ IN2=/cluster/home/lchueca/TBG_3759_anchovy/01.2_flye/assembly.fasta
 # Draft genome assembly 01.4_wtdbg/prueba
 IN3=/cluster/home/lchueca/TBG_3759_anchovy/01.4_wtdbg/prueba/anchovy.asm.cns.fa
 # Output directory
-OUT=/cluster/home/lchueca/TBG_3759_anchovy/01_quast3
+OUT=/cluster/home/lchueca/TBG_3759_anchovy/02_quast
 #CPU per task
 CPU=12
 
