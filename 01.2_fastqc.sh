@@ -11,9 +11,9 @@
 module load fastqc/0.12.1 multiqc/1.20
 
 #RNA sequences
-IN=/cluster/home/lchueca/TBG_3759_anchovy/RNA/RNA_adult/01_trimmomatic/*paired.fq.gz
+IN=/cluster/home/lchueca/TBG_3759_anchovy/RNA/RNA_adult/02_trimmomatic/*paired.fq.gz
 #Output directory
-OUT=/cluster/home/lchueca/TBG_3759_anchovy/RNA/RNA_adult/01_trimmomatic/fastqc
+OUT=/cluster/home/lchueca/TBG_3759_anchovy/RNA/RNA_adult/02_trimmomatic/fastqc
 #CPU per task
 CPU=4
 
