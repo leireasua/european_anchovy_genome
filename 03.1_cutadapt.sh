@@ -25,4 +25,4 @@ for i in $(find ${IN} -name "*.gz" | sed "s|"$IN"\/||" | sed 's/.fq.gz//'); do c
 #multiqc . or ${pwd} or ${OUT} is the same
 
 fastqc -t ${CPU} *.gz &&
-multiqc ${pwd} 
+multiqc .
