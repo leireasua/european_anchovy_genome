@@ -8,16 +8,17 @@
 #SBATCH --mem=200G
 #SBATCH --cpus-per-task=40
 
-module load trinity/2.15.0 busco/5.4.3
+#that trinity version creates problems
+module load trinity/2.15.0 busco/5.5.0
 
 #Directory with trimmed input data:
-IN= #Include the path of cutadapt data here
+IN=/cluster/home/lchueca/TBG_3759_anchovy/RNA/RNA_adult/03_cutadapt
 #CPUs
 CPU=40
 #Linage for busco analysis
 LIN=/cluster/software/busco/datasets/odb10_2021_09_02/actinopterygii_odb10
 #Output directory for busco results
-OUT=Enen_busco5_odb10
+OUT=busco5.5_odb10
 #BUSCO mode
 M=transcriptome
 
