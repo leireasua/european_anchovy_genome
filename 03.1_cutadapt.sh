@@ -18,11 +18,10 @@ CPU=40
 
 # Create a loop for input data
 
-for i in $(find ${IN} -name "*.gz" | sed "s|"$IN"\/||" | sed 's/.fq.gz//'); do cutadapt -u 10 -j ${CPU} -o ${OUT}/${i}_cutadapt.fq.gz  ${IN}/${i}.fq.gz; done &&
+for i in $(find ${IN} -name "*.gz" | sed "s|"$IN"\/||" | sed 's/.fq.gz//'); do cutadapt -u 15 -j ${CPU} -o ${OUT}/${i}_cutadapt.fq.gz  ${IN}/${i}.fq.gz; done &&
 
 #Quality control of Illumina reads with fastqc
 #Combine fastqc results into a single report
-#multiqc . or ${pwd} or ${OUT} is the same
 
 fastqc -t ${CPU} *.gz &&
 multiqc .
