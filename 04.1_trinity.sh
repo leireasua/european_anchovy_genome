@@ -8,8 +8,7 @@
 #SBATCH --mem=200G
 #SBATCH --cpus-per-task=40
 
-#that trinity version creates problems
-module load trinity/2.15.0 busco/5.5.0
+module load trinity/2.11.0 busco/5.5.0
 
 #Directory with trimmed input data:
 IN=/cluster/home/lchueca/TBG_3759_anchovy/RNA/RNA_adult/03_cutadapt
