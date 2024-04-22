@@ -1,5 +1,0 @@
-fasterq-dump --split-files SRR4431660
-fasterq-dump --split-files SRR4431653
-fasterq-dump --split-files SRR4431649
-fasterq-dump --split-files SRR4431645
-fasterq-dump --split-files SRR4431643
