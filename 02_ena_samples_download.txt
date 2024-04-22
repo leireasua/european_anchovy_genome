@@ -1,0 +1,2 @@
+fasterq-dump --split-files SRR1575626
+fasterq-dump --split-files SRR1575628
