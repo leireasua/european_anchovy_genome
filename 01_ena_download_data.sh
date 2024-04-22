@@ -11,7 +11,7 @@
 
 module load sratoolkit/3.0.7
 
-FILE=$(cat samples_download.txt | sed -n ${SLURM_ARRAY_TASK_ID}p) &&
+FILE=$(cat 01_ena_samples_download.txt | sed -n ${SLURM_ARRAY_TASK_ID}p) &&
 bash -c "$FILE" &&
 
 gzip *fastq
