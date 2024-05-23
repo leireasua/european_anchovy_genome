@@ -17,7 +17,7 @@ IN=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/related_species
 #Output directory
 OUT=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/03_gemoma/03.3_gemoma_pipeline
 #Target genome, result obtained from repeatmasker
-GE=/cluster/home/lchueca/TBG_3759_anchovy/04_repeats_annotation/02_repeatmasker/fasta.masked
+GE=/cluster/home/lchueca/TBG_3759_anchovy/04_repeats_annotation/02_repeatmasker/Enen_ragtag_simpl.fasta.masked
 #Introns !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 INT=denoise_introns
 #Coverage from 03.1_ERE
