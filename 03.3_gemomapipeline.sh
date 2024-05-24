@@ -15,13 +15,13 @@ CPU=64
 #Input directory where related species genomes are
 IN=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/related_species
 #Output directory
-OUT=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/03_gemoma/03.3_gemoma_pipeline
-#Target genome, result obtained from repeatmasker
-GE=/cluster/home/lchueca/TBG_3759_anchovy/04_repeats_annotation/02_repeatmasker/Enen_ragtag_simpl.fasta.masked
-#Introns !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-INT=denoise_introns
+OUT=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/03_gemoma/03_gemoma_pipeline
+#Target genome, result obtained from repeatmasker (the name was changed to masked.fasta in 03_genoma_pipeline dir)
+GE=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/03_gemoma/03_gemoma_pipeline/Enen_ragtag_simpl.masked.fasta
+#Denoised introns
+INT=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/03_gemoma/02_introns/denoised_introns.gff
 #Coverage from 03.1_ERE
-CO=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/03_gemoma/03.1_extraction_RNA_evidence/coverage.bedgraph
+CO=/cluster/home/lchueca/TBG_3759_anchovy/05_annotation/03_gemoma/01_extraction_RNA_evidence/coverage.bedgraph
 
 java -Xmx700G -jar /cluster/software/gemoma/GeMoMa-1.9/GeMoMa-1.9.jar CLI GeMoMaPipeline threads=${CPU} outdir=${OUT} tblastn=false \
 r=EXTRACTED \
@@ -41,5 +41,3 @@ s=own i=DeClu a=${IN}/GCF_900700375.1_fDenClu1.1_genomic.gff g=${IN}/GCF_9007003
 s=own i=ClHar a=${IN}/GCF_900700415.2_Ch_v2.0.2_genomic.gff g=${IN}/GCF_900700415.2_Ch_v2.0.2_genomic.fna \
 s=own i=ThAma a=${IN}/GCF_902500255.1_fThaAma1.1_genomic.gff g=${IN}/GCF_902500255.1_fThaAma1.1_genomic.fna \
 s=own i=SaPil a=${IN}/Louro_et_al_2019-Sardine-coding_genes.gff g=${IN}/Louro_et_al_2019-Sardine-GCA_900499035.1_SP_G_genomic.fna 
-
-
