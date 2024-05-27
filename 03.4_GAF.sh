@@ -23,5 +23,4 @@ g=${IN}_5.gff p=CyCar \
 g=${IN}_6.gff p=AlSap \
 g=${IN}_7.gff p=DeClu \
 g=${IN}_8.gff p=ClHar \
-g=${IN}_9.gff p=ThAma \
-g=${IN}_10.gff p=SaPil 
+g=${IN}_9.gff p=ThAma 
