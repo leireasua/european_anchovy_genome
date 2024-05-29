@@ -20,7 +20,7 @@ IN4=/cluster/home/lchueca/TBG_3759_anchovy/RNA/RNA_egg_juvenil/03_cutadapt
 for i in $(find "${IN1}" "${IN2}" "${IN3}" "${IN4}" -name "*paired_cutadapt.*.gz"); do ln -s ${i}; done
 
 #Genome assembly after scaffolding and masking
-GE=/cluster/home/lchueca/TBG_3759_anchovy/04_repeats_annotation/02_repeatmasker/Enen_ragtag_simpl.fasta.masked
+GE=/cluster/home/lchueca/TBG_3759_anchovy/04_repeats_annotation/02_repeatmasker/Enen_ragtag_simpl.masked.fasta
 #RNA data from different directories
 R1=Anchovis_Mix_7_EKRN23H000053-1A_HFC7MDSX7_L3
 R2=Anchovis_Mix_7_EKRN23H000053-1A_HFCCLDSX7_L4
