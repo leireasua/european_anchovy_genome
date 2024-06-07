@@ -15,5 +15,4 @@ PRO=proteins.fasta
 #Number of threads
 CPU=64
 
-interproscan.sh -i ${IN} -f tsv -iprlookup -b Enen -pa -goterms -exclappl SignalP_GRAM_NEGATIVE,SignalP_GRAM_POSITIVE -dp -cpu ${CPU}
-
+interproscan.sh -i ${PRO} -f tsv -iprlookup -b Enen -pa -goterms -exclappl SignalP_GRAM_NEGATIVE,SignalP_GRAM_POSITIVE -dp -cpu ${CPU}
