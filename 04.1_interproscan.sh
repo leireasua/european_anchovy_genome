@@ -5,13 +5,16 @@
 #SBATCH --output %x-%j.out
 
 #SBATCH --partition=mem
-#SBATCH --mem=50G
+#SBATCH --mem=500G
 #SBATCH --cpus-per-task=64
 
-module load interproscan/5.64-96.0
+module load interproscan/5.47-82.0
+
+#In order to replace * symbol that represents stop codon, the following command was used:
+#sed 's/\*//g' proteins.fasta > proteins02.fasta
 
 #Input file in fasta format
-PRO=proteins.fasta
+PRO=proteins02.fasta
 #Number of threads
 CPU=64
 
