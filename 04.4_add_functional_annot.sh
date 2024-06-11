@@ -4,16 +4,16 @@
 #SBATCH --error %x-%j.err
 #SBATCH --output %x-%j.out
 
-#SBATCH --partition=cpu
-#SBATCH --mem=30G
+#SBATCH --partition=mem
+#SBATCH --mem=60G
 #SBATCH --cpus-per-task=64
 
 module load maker/2.31.10-mpi
 
-PRO=proteins.fasta
+PRO=proteins02.fasta
 CDS=cds.fasta
 ANOT=final_annotation.gff
-UNI=uniprot_sprot_2023-05.fasta
+UNI=uniprot_sprot_2024-05.fasta
 
 ipr_update_gff ${ANOT} Enen.tsv > Enen.all.ipr.gff &&
 
