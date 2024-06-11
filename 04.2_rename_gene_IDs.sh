@@ -4,13 +4,13 @@
 #SBATCH --error %x-%j.err
 #SBATCH --output %x-%j.out
 
-#SBATCH --partition=cpu
-#SBATCH --mem=30G
-#SBATCH --cpus-per-task=54
+#SBATCH --partition=mem
+#SBATCH --mem=60G
+#SBATCH --cpus-per-task=64
 
 module load maker/2.31.10-mpi
 
-PRO=proteins.fasta
+PRO=proteins02.fasta
 CDS=cds.fasta
 ANOT=final_annotation.gff
 
